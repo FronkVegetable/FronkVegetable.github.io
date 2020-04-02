@@ -1,0 +1,33 @@
+var myImage = document.querySelector("img");
+
+myImage.onclick = function() {
+    var mySrc = myImage.getAttribute("src");
+    if (mySrc === "C:/Users/User/Desktop/kosch/test-kosch.atom/image/kosch.atom.jpg"){
+        myImage.setAttribute ("src","C:/Users/User/Desktop/kosch/test-kosch.atom/image/kosch.atom2.jpg");
+    }else {
+myImage.setAttribute ("src","C:/Users/User/Desktop/kosch/test-kosch.atom/image/kosch.atom.jpg");
+    }
+}
+
+var myButton = document.querySelector('button');
+var myHeading = document.querySelector('h1');
+
+function setUserName() {
+    var myName = prompt('Please enter your name.');
+    localStorage.setItem('name', myName);
+    myHeading.textContent = "This litle kitty realy like you," + myName;
+  }
+
+if(!localStorage.getItem('name')) {
+    setUserName();
+  } else {
+    var storedName = localStorage.getItem('name');
+    myHeading.textContent = "This litle kitty realy like you," + storedName;
+  }
+  myButton.onclick = function() {
+    setUserName();
+  }
+
+  document.querySelector("html").onclick = function(){
+    alert ("Ouch! Stop poking me!");
+  }
